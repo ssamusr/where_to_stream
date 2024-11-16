@@ -37,6 +37,7 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn', // Advertencia para variables no usadas en TypeScript
       'jsx-a11y/no-static-element-interactions': 'warn', // Accesibilidad para interacciones de elementos estáticos
       '@typescript-eslint/no-unused-expressions': 'off',
+      'react-hooks/exhaustive-deps': 'off',
     },
   },
   prettierConfig, // Configuración de Prettier añadida directamente

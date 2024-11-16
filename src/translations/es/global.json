@@ -1,0 +1,20 @@
+{
+  "navbar": {
+    "links": [
+      { "text": "Inicio", "url": "/" },
+      { "text": "Acerca de", "url": "/about" },
+      { "text": "Contacto", "url": "/contact" }
+    ]
+  },
+  "mainContent": {
+    "title": "Encuentra Películas y Series de TV",
+    "description": "Descubre dónde puedes ver tus películas y series favoritas."
+  },
+  "logos": [
+    { "name": "Netflix", "url": "/logos/netflix.svg" },
+    { "name": "HBO", "url": "/logos/hbo.svg" },
+    { "name": "Disney+", "url": "/logos/disney.svg" },
+    { "name": "Amazon Prime", "url": "/logos/prime.svg" },
+    { "name": "Hulu", "url": "/logos/hulu.svg" }
+  ]
+}

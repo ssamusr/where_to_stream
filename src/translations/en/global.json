@@ -1,0 +1,20 @@
+{
+  "navbar": {
+    "links": [
+      { "text": "Inicio", "url": "/" },
+      { "text": "Acerca de", "url": "/about" },
+      { "text": "Contacto", "url": "/contact" }
+    ]
+  },
+  "mainContent": {
+    "title": "Find Movies & Series TV",
+    "description": "Discover where and how to stream Movies and Series TV"
+  },
+  "logos": [
+    { "name": "Netflix", "url": "/logos/netflix.svg" },
+    { "name": "HBO", "url": "/logos/hbo.svg" },
+    { "name": "Disney+", "url": "/logos/disney.svg" },
+    { "name": "Amazon Prime", "url": "/logos/prime.svg" },
+    { "name": "Hulu", "url": "/logos/hulu.svg" }
+  ]
+}
