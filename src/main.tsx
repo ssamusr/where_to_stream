@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.tsx'
+import './index.css'
 
+import i18next from 'i18next'
+import { I18nextProvider } from 'react-i18next'
 import global_en from './translations/en/global.json'
 import global_es from './translations/es/global.json'
-import { I18nextProvider } from 'react-i18next'
-import i18next from 'i18next'
 
 i18next.init({
   interpolation: { escapeValue: false },

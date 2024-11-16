@@ -1,9 +1,9 @@
 {
   "navbar": {
     "links": [
-      { "text": "Inicio", "url": "/" },
-      { "text": "Acerca de", "url": "/about" },
-      { "text": "Contacto", "url": "/contact" }
+      { "id": 1, "text": "Home", "url": "/" },
+      { "id": 2, "text": "Top Shows", "url": "/top" },
+      { "id": 3, "text": "About", "url": "/about" }
     ]
   },
   "mainContent": {

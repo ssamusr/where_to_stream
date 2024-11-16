@@ -6,9 +6,9 @@
   ],
   "navbar": {
     "links": [
-      { "text": "Inicio", "url": "/" },
-      { "text": "Acerca de", "url": "/about" },
-      { "text": "Contacto", "url": "/contact" }
+      { "id": 1, "text": "Inicio", "url": "/" },
+      { "id": 2, "text": "Acerca de", "url": "/about" },
+      { "id": 3, "text": "Contacto", "url": "/contact" }
     ]
   },
   "mainContent": {
