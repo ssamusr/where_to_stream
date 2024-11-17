@@ -15,7 +15,7 @@ const languages = Object.keys(
 
 export const Header = () => {
   const { t, i18n } = useTranslation('global')
-  const [lang, setLang] = useState(languages[0])
+  const [lang, setLang] = useState(languages[1])
 
   const links = t('navbar.links', { returnObjects: true }) as {
     id: number

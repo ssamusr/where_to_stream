@@ -36,29 +36,29 @@ export const HomePage = () => {
         {/* Icons */}
         <div className='flex justify-center gap-6 mt-10'>
           <img
-            src='https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg'
+            src='src/assets/images/netflix.png'
             alt='Netflix'
-            className='w-12 h-12 md:w-16 md:h-16'
+            className='w-14 h-14 md:w-12 md:h-12 bg-black p-2 rounded shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)]'
           />
           <img
-            src='https://upload.wikimedia.org/wikipedia/commons/1/17/HBO_Max_Logo.svg'
+            src='src/assets/images/hbo.png'
             alt='HBO'
-            className='w-12 h-12 md:w-16 md:h-16'
+            className='w-14 h-14 md:w-12 md:h-12 bg-black rounded shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)]'
           />
           <img
             src='https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg'
             alt='Prime Video'
-            className='w-12 h-12 md:w-16 md:h-16'
+            className='w-14 h-14 md:w-12 md:h-12 bg-black p-1 rounded shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)]'
           />
           <img
             src='https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg'
             alt='Disney+'
-            className='w-12 h-12 md:w-16 md:h-16'
+            className='w-14 h-14 md:w-12 md:h-12 bg-black p-2 rounded shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)]'
           />
           <img
             src='https://upload.wikimedia.org/wikipedia/commons/2/28/Apple_TV_Plus_Logo.svg'
             alt='Apple TV'
-            className='w-12 h-12 md:w-16 md:h-16'
+            className='w-14 h-14 md:w-12 md:h-12 bg-black p-2 rounded shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)]'
           />
         </div>
       </div>

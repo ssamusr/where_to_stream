@@ -9,5 +9,8 @@
   "mainContent": {
     "title": "Encuentra Películas y Series de TV",
     "description": "Descubre dónde puedes ver tus películas y series favoritas."
+  },
+  "searchInput": {
+    "placeholder": "Buscar..."
   }
 }

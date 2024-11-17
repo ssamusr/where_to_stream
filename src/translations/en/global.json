@@ -16,5 +16,8 @@
     { "name": "Disney+", "url": "/logos/disney.svg" },
     { "name": "Amazon Prime", "url": "/logos/prime.svg" },
     { "name": "Hulu", "url": "/logos/hulu.svg" }
-  ]
+  ],
+  "searchInput": {
+    "placeholder": "Search..."
+  }
 }
