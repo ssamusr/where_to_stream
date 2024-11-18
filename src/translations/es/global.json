@@ -8,7 +8,8 @@
   },
   "mainContent": {
     "title": "Encuentra Películas y Series de TV",
-    "description": "Descubre dónde puedes ver tus películas y series favoritas."
+    "description": "Descubre dónde puedes ver tus películas y series favoritas.",
+    "topShows": "Lo más visto"
   },
   "searchInput": {
     "placeholder": "Buscar..."

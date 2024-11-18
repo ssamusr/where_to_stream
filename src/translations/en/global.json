@@ -8,7 +8,8 @@
   },
   "mainContent": {
     "title": "Find Movies & Series TV",
-    "description": "Discover where and how to stream Movies and Series TV"
+    "description": "Discover where and how to stream Movies and Series TV",
+    "topShows": "Most Popular"
   },
   "logos": [
     { "name": "Netflix", "url": "/logos/netflix.svg" },
