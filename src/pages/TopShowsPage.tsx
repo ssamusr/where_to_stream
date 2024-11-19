@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import topShowsData from '../assets/data/TopShowsdata.json'
-import { Header } from '../components'
+import { CardShow, Header } from '../components'
 
 export const TopShowsPage = () => {
   const { t } = useTranslation('global')
@@ -19,17 +19,12 @@ export const TopShowsPage = () => {
           mx-auto max-w-full'
         >
           {topShowsData.map((show) => (
-            <a
+            <CardShow
               key={show.id}
-              className='flex flex-col items-center text-center'
-              href={`./show/${show.id}`}
-            >
-              <img
-                src={show.imageSet.verticalPoster.w240}
-                alt={`${show.originalTitle} Poster`}
-                className='mb-4 max-w-full h-auto'
-              />
-            </a>
+              id={show.id}
+              title={show.originalTitle}
+              image={show.imageSet.verticalPoster.w240}
+            />
           ))}
         </div>
       </div>

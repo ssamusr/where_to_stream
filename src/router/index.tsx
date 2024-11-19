@@ -4,6 +4,7 @@ import {
   HomePage,
   NotFoundPage,
   SearchResultsPage,
+  ShowPage,
   TopShowsPage,
 } from '../pages'
 
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/show/:id',
-        element: <SearchResultsPage />,
+        element: <ShowPage />,
       },
     ],
   },
