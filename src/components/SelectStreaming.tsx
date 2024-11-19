@@ -1,18 +1,32 @@
 import React, { useState } from 'react'
 import siteContent from '../assets/data/siteContent.json'
+import { getTopShows } from '../services/topShows'
+import { useFetch } from '../hooks/useFetch'
 
 interface SelectStreamingProps {
-  defaultStreaming?: string
+  defaultStreamingService: string
+  onQueryChange: (platform: string) => void
 }
 
 export const SelectStreaming: React.FC<SelectStreamingProps> = ({
-  defaultStreaming = '',
+  defaultStreamingService,
+  onQueryChange,
 }) => {
-  const [selectedStreaming, setSelectedStreaming] = useState(defaultStreaming)
+  const [selectedStreamingService, setStreamingService] = useState<string>(
+    defaultStreamingService,
+  )
+  const { data, loading, error } = useFetch({
+    fetchFunction: getTopShows,
+    params: selectedStreamingService,
+  })
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedStreaming(event.target.value)
+    const platform = event.target.value
+    setStreamingService(platform)
+    onQueryChange(platform)
   }
+
+  console.log(data)
 
   return (
     <div className='w-full max-w-xs mx-auto mb-12'>
@@ -21,11 +35,11 @@ export const SelectStreaming: React.FC<SelectStreamingProps> = ({
         name='streaming-platform'
         className='w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-700'
         aria-label='Select your streaming platform'
-        value={selectedStreaming}
+        value={selectedStreamingService}
         onChange={handleSelectChange}
       >
         {siteContent.streamingIcons.map((icon) => (
-          <option key={icon.id} value={icon.name}>
+          <option key={icon.id} value={icon.query}>
             {icon.name}
           </option>
         ))}

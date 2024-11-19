@@ -8,7 +8,13 @@ export const TopShowsPage: React.FC = () => {
   const { t } = useTranslation('global')
   const location = useLocation()
 
-  const [selectedStreaming] = useState(location.state?.selectedStreaming || '')
+  const [selectedStreamingService, setSelectedStreamingService] = useState(
+    location.state?.selectedStreaming || 'netflix',
+  )
+
+  const handleQueryChange = (newQuery: string) => {
+    setSelectedStreamingService(newQuery)
+  }
 
   return (
     <>
@@ -18,7 +24,10 @@ export const TopShowsPage: React.FC = () => {
           {t('mainContent.topShows')}
         </h1>
 
-        <SelectStreaming defaultStreaming={selectedStreaming} />
+        <SelectStreaming
+          defaultStreamingService={selectedStreamingService}
+          onQueryChange={handleQueryChange}
+        />
 
         <div
           className='grid gap-2 grid-cols-1 

@@ -35,8 +35,6 @@ export const CardShow: React.FC<CardShowProps> = ({
     (platform) => platform.type === 'subscription',
   )
 
-  console.log(subscriptionPlatforms)
-
   return (
     <article
       key={id}
@@ -46,15 +44,18 @@ export const CardShow: React.FC<CardShowProps> = ({
         <img
           src={image}
           alt={`${title} Poster`}
-          className='w-full h-full transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur-sm'
+          className='w-full h-full transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur'
         />
         <div className='absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0'></div>
 
-        <div className='absolute w-full bottom-0 left-0 z-10 p-4 text-white transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
-          <h1 className='text-lg font-bold'>{title}</h1>
-          <div className='flex flex-wrap gap-2'>
+        <div className='absolute w-full bottom-0 left-0 z-10 p-6 text-white transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
+          <h1 className='text-2xl font-bold mb-2'>{title}</h1>
+          <div className='flex flex-wrap gap-1'>
             {genres.map((genre) => (
-              <span key={genre.id} className='px-2 py-1 bg-gray-800 rounded-md'>
+              <span
+                key={genre.id}
+                className='px-2 py-1 bg-gray-700 rounded-md text-sm'
+              >
                 {genre.name}
               </span>
             ))}

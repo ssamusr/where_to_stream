@@ -37,13 +37,13 @@ export const HomePage: React.FC = () => {
         {/* <Indicators images={backgroundImages} currentIndex={0} /> */}
 
         <div className='flex justify-center gap-6 mt-10'>
-          {streamingIcons.map(({ id, image, name }) => (
+          {streamingIcons.map(({ id, image, name, query }) => (
             <img
               key={id}
               src={image}
               alt={name}
               className='w-14 h-14 md:w-12 md:h-12 p-1 rounded relative bg-white/20 backdrop-blur-sm border-white/20 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] cursor-pointer'
-              onClick={() => handleIconClick(name)}
+              onClick={() => handleIconClick(query)}
             />
           ))}
         </div>
