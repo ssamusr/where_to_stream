@@ -21,7 +21,7 @@ export const TopShowsPage: React.FC = () => {
         <SelectStreaming defaultStreaming={selectedStreaming} />
 
         <div
-          className='grid gap-1 grid-cols-1 
+          className='grid gap-2 grid-cols-1 
           sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
           mx-auto max-w-full'
         >
@@ -30,7 +30,9 @@ export const TopShowsPage: React.FC = () => {
               key={show.id}
               id={show.id}
               title={show.originalTitle}
-              image={show.imageSet.verticalPoster.w240}
+              image={show.imageSet.verticalPoster.w720}
+              genres={show.genres}
+              streamPlatforms={show.streamingOptions.es}
             />
           ))}
         </div>
@@ -38,3 +40,5 @@ export const TopShowsPage: React.FC = () => {
     </>
   )
 }
+
+// TODO: arreglar el tipado de streamPlatforms

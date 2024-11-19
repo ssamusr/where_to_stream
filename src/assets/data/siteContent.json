@@ -8,9 +8,9 @@
     },
     {
       "id": 2,
-      "name": "HBO",
+      "name": "Max",
       "image": "src/assets/images/icons/hbo.png",
-      "alt": "HBO"
+      "alt": "Max"
     },
     {
       "id": 3,
@@ -20,7 +20,7 @@
     },
     {
       "id": 4,
-      "name": "Disney +",
+      "name": "Disney+",
       "image": "src/assets/images/icons/disney.png",
       "alt": "Disney+"
     },
