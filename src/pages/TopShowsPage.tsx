@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import topShowsData from '../assets/data/TopShowsdata.json'
-import { CardShow, Header } from '../components'
+import { CardShow, Header, SelectStreaming } from '../components'
 
 export const TopShowsPage = () => {
   const { t } = useTranslation('global')
@@ -9,9 +9,11 @@ export const TopShowsPage = () => {
     <>
       <Header />
       <div className='sm:px-6 lg:px-8 xl:px-12 px-4 max-w-[1600px] mx-auto'>
-        <h1 className='text-4xl md:text-6xl font-bold mb-8 text-center'>
+        <h1 className='text-4xl md:text-6xl font-bold mb-2 text-center'>
           {t('mainContent.topShows')}
         </h1>
+
+        <SelectStreaming />
 
         <div
           className='grid gap-1 grid-cols-1 
