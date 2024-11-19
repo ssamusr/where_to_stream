@@ -1,9 +1,14 @@
+import React, { useState } from 'react'
+import { CardShow, Header, SelectStreaming } from '../components'
 import { useTranslation } from 'react-i18next'
 import topShowsData from '../assets/data/TopShowsdata.json'
-import { CardShow, Header, SelectStreaming } from '../components'
+import { useLocation } from 'react-router-dom'
 
-export const TopShowsPage = () => {
+export const TopShowsPage: React.FC = () => {
   const { t } = useTranslation('global')
+  const location = useLocation()
+
+  const [selectedStreaming] = useState(location.state?.selectedStreaming || '')
 
   return (
     <>
@@ -13,7 +18,7 @@ export const TopShowsPage = () => {
           {t('mainContent.topShows')}
         </h1>
 
-        <SelectStreaming />
+        <SelectStreaming defaultStreaming={selectedStreaming} />
 
         <div
           className='grid gap-1 grid-cols-1 
