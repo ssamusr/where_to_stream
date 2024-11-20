@@ -27,7 +27,7 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps) => {
     }
 
     fetchData()
-  }, [])
+  }, [fetchFunction, params])
 
   return {
     data,
