@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { CardShow, Header, SelectStreaming } from '../components'
-import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { CardShow, Header, SelectStreaming } from '../components'
 import { useFetch } from '../hooks/useFetch'
 import { getTopShows } from '../services/topShows'
 
@@ -10,6 +10,9 @@ interface Show {
   originalTitle: string
   imageSet: {
     verticalPoster: {
+      w720: string
+    }
+    verticalBackdrop: {
       w720: string
     }
   }
@@ -51,8 +54,6 @@ export const TopShowsPage: React.FC = () => {
     setSelectedStreamingService(newQuery)
   }
 
-  console.log(topShowsData)
-
   return (
     <>
       <Header />
@@ -86,3 +87,5 @@ export const TopShowsPage: React.FC = () => {
     </>
   )
 }
+
+//TODO: refactorizar todo el tipado de la API

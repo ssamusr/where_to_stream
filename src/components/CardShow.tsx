@@ -40,7 +40,7 @@ export const CardShow: React.FC<CardShowProps> = ({
       key={id}
       className='relative rounded-2xl shadow-[0_15px_35px_rgba(255,255,255,0.1)] overflow-hidden'
     >
-      <a href={`./show/${id}`} className='group relative overflow-hidden'>
+      <a href='/top' className='group relative overflow-hidden'>
         <img
           src={image}
           alt={`${title} Poster`}
@@ -60,36 +60,53 @@ export const CardShow: React.FC<CardShowProps> = ({
               </span>
             ))}
           </div>
-
+          <h2>Disponible en: </h2>
           <div className='flex gap-2 mt-2'>
-            {subscriptionPlatforms.map((platform) => {
-              const matchingIcon = siteContent.streamingIcons.find(
-                (icon) => icon.name === platform.service.name,
-              )
+            {(() => {
+              const renderedIds = new Set<string>() // Para almacenar los IDs renderizados
 
-              return (
-                <a
-                  key={platform.service.id}
-                  href={platform.link}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='block'
-                >
-                  {matchingIcon ? (
-                    <img
-                      src={matchingIcon.image}
-                      alt={matchingIcon.alt}
-                      className='w-12 h-12 md:w-8 md:h-8 p-1 rounded relative bg-white/20 backdrop-blur-sm border-white/20 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] cursor-pointer'
-                    />
-                  ) : (
-                    <span className='text-sm'>{platform.service.name}</span>
-                  )}
-                </a>
-              )
-            })}
+              return subscriptionPlatforms
+                .filter((platform) => {
+                  // Filtrar duplicados basado en `service.id`
+                  if (renderedIds.has(platform.service.id)) {
+                    return false
+                  }
+                  renderedIds.add(platform.service.id)
+                  return true
+                })
+                .map((platform) => {
+                  const matchingIcon = siteContent.streamingIcons.find(
+                    (icon) => icon.name === platform.service.name,
+                  )
+
+                  return (
+                    <a
+                      key={platform.service.id}
+                      href={platform.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='block'
+                    >
+                      {matchingIcon ? (
+                        <img
+                          src={matchingIcon.image}
+                          alt={matchingIcon.alt}
+                          className='w-12 h-12 md:w-12 md:h-12 p-1 rounded relative bg-white/20 backdrop-blur-sm border-white/20 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] cursor-pointer'
+                        />
+                      ) : (
+                        <span className='text-sm'>{platform.service.name}</span>
+                      )}
+                    </a>
+                  )
+                })
+            })()}
           </div>
         </div>
       </a>
     </article>
   )
 }
+
+//TODO: refactorizar toda la lógica del renderizado
+//TODO2: refactorizar todo el tipado de la API
+//TODO3: Arreglar las cards. Hay que quitar el <a> de toda la card
