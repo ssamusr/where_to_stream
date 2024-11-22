@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
+
 import { CardShow, Header, SelectStreaming } from '../components'
 import { useFetch } from '../hooks/useFetch'
 import { getTopShows } from '../services/topShows'
@@ -38,7 +38,6 @@ interface StreamPlatform {
 }
 
 export const TopShowsPage: React.FC = () => {
-  const { t } = useTranslation('global')
   const location = useLocation()
 
   const [selectedStreamingService, setSelectedStreamingService] = useState(
@@ -59,7 +58,7 @@ export const TopShowsPage: React.FC = () => {
       <Header />
       <div className='sm:px-6 lg:px-8 xl:px-12 px-4 max-w-[1600px] mx-auto'>
         <h1 className='text-4xl md:text-6xl font-bold mb-2 text-center'>
-          {t('mainContent.topShows')}
+          Lo más visto en:
         </h1>
 
         <SelectStreaming

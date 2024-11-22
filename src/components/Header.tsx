@@ -1,57 +1,99 @@
-import { useTranslation } from 'react-i18next'
-import { navbar } from '../assets/data/data.json'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { siteContent } from '../constants/siteContent'
+import { Link } from 'react-router-dom'
 
-const languages = Object.keys(
-  import.meta.glob('/src/translations/*/global.json'),
-).map((path) => path.split('/')[3])
+export const Header: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false)
 
-/* 
-    EXPLICACIÓN languages
-    1. Object.keys --> retonar un array de string de paths
-    2. path.split('/')[3] --> separa cada array por / y nos quedamos con la tercera posición del array
-    3. languages = ['es', 'en']
-*/
+  const { navbarLinks } = siteContent
 
-export const Header = () => {
-  const { t, i18n } = useTranslation('global')
-  const [lang, setLang] = useState(languages[1])
-
-  const links = t('navbar.links', { returnObjects: true }) as {
-    id: number
-    text: string
-    url: string
-  }[]
-
-  const handleChangeLanguage = () => {
-    const currentLangIndex = languages.indexOf(lang)
-    const nextLangIndex = (currentLangIndex + 1) % languages.length
-    const newLang = languages[nextLangIndex]
-
-    i18n.changeLanguage(newLang)
-    setLang(newLang)
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen)
   }
 
   return (
-    <header className='relative w-full h-16 z-10 grid items-center'>
-      <nav className='flex flex-row justify-between items-center px-10'>
+    <header className='relative bg-transparent text-white'>
+      <div className='mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10'>
         <div>
-          <a href='/'>WhereToStream</a>
+          <Link to='/' aria-label='Inicio'>
+            <h1 className='relative z-30 text-lg md:text-xl lg:text-2xl'>
+              WhereTo<span className='underline'>Stream</span>
+            </h1>
+          </Link>
         </div>
-        <ul className='flex flex-row items-center gap-4'>
-          {links.map((link) => (
-            <li key={link.id} className='text-white'>
-              <a href={link.url}>{link.text}</a>
-            </li>
-          ))}
-          <button
-            className='border-2 border-white p-1 rounded'
-            onClick={() => handleChangeLanguage()}
+
+        {/* Hamburger Menu */}
+        <button
+          className='z-30 block rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white lg:hidden'
+          onClick={toggleMenu}
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+        >
+          <span className='sr-only'>Abrir menú</span>
+          <svg
+            className='h-6 w-6'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+            aria-hidden='true'
           >
-            {lang}
-          </button>
-        </ul>
-      </nav>
+            {menuOpen ? (
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M6 18L18 6M6 6l12 12'
+              />
+            ) : (
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M4 6h16M4 12h16m-7 6h7'
+              />
+            )}
+          </svg>
+        </button>
+
+        {/* Desktop Navigation */}
+        <nav
+          className={`hidden space-x-8 lg:flex`}
+          aria-label='Navegación principal'
+        >
+          {navbarLinks.map(({ id, text, url }) => (
+            <Link
+              key={id}
+              to={url}
+              className='hover:text-gray-300 focus:text-gray-300 focus:underline focus:outline-none lg:text-base xl:text-xl'
+            >
+              {text}
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <nav
+          className='absolute right-0 top-0 z-20 h-screen w-full bg-gray-950 text-white shadow-lg lg:hidden'
+          aria-label='Navegación móvil'
+        >
+          <ul className='mt-16 flex flex-col items-center gap-8'>
+            {navbarLinks.map(({ id, text, url }) => (
+              <li key={id}>
+                <Link
+                  to={url}
+                  className='block w-full rounded-md px-4 py-2 text-center text-xl hover:bg-gray-700 focus:bg-gray-700 focus:outline-none'
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }

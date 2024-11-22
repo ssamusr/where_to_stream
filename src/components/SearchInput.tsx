@@ -1,8 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 
 export const SearchInput = () => {
-  const { t } = useTranslation('global')
   const [query, setQuery] = useState('')
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -15,11 +13,15 @@ export const SearchInput = () => {
   }
 
   return (
-    <form action='' onSubmit={handleSubmit} className='w-1/3'>
+    <form
+      action=''
+      onSubmit={handleSubmit}
+      className='w-full max-w-sm px-6 sm:max-w-md lg:max-w-lg'
+    >
       <input
         type='text'
-        placeholder={t('searchInput.placeholder')}
-        className='w-full border border-white bg-transparent text-white py-2 px-4 rounded-lg outline-none focus:ring-2 focus:ring-white'
+        placeholder='Buscar película o series...'
+        className='w-full rounded-lg border border-white bg-transparent px-4 py-2 text-lg text-white outline-none focus:ring-2 focus:ring-white'
         value={query}
         onChange={(event) => handleInputChange(event)}
       />
