@@ -33,5 +33,6 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps) => {
     data,
     loading,
     error,
+    fetchFunction,
   }
 }

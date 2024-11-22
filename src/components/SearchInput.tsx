@@ -1,15 +1,35 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
+import { searchShowByTitle } from '../services/searchShowByTitle'
 
-export const SearchInput = () => {
-  const [query, setQuery] = useState('')
+export const SearchInput: React.FC = () => {
+  const [query, setQuery] = useState<string>('')
+  const [searchResults, setSearchResults] = useState<any>(null)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [error, setError] = useState<string | null>(null)
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setQuery('')
+
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const data = await searchShowByTitle(query)
+      setSearchResults(data)
+    } catch (error) {
+      setError(error instanceof Error ? error.message : 'Error desconocido')
+    } finally {
+      setIsLoading(false)
+      setQuery('')
+    }
   }
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
+  }
+
+  if (searchResults) {
+    console.log(searchResults)
   }
 
   return (
@@ -28,3 +48,5 @@ export const SearchInput = () => {
     </form>
   )
 }
+
+// TODO: tipar los resultados de la data de la API
