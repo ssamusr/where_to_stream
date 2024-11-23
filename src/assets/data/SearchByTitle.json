@@ -57,44 +57,21 @@
           "service": {
             "id": "prime",
             "name": "Prime Video",
-            "homePage": "https://www.primevideo.com/",
-            "themeColorCode": "#00A8E1",
-            "imageSet": {
-              "lightThemeImage": "https://media.movieofthenight.com/services/prime/logo-light-theme.svg",
-              "darkThemeImage": "https://media.movieofthenight.com/services/prime/logo-dark-theme.svg",
-              "whiteImage": "https://media.movieofthenight.com/services/prime/logo-white.svg"
-            }
+            "homePage": "https://www.primevideo.com/"
           },
           "type": "buy",
           "link": "https://www.primevideo.com/detail/0TNWJYOSXYR74OY4W78E71780P/ref=atv_dp",
-          "quality": "uhd",
-          "price": {
-            "amount": "8.99",
-            "currency": "EUR",
-            "formatted": "8.99 EUR"
-          },
-          "expiresSoon": false,
-          "availableSince": 1690736258
+          "videoLink": "https://play.max.com/video/watch/306aa55d-38c5-4614-b75e-ca7433887790/c463e2c8-e703-466a-bd3d-aa02668ff3cb"
         },
         {
           "service": {
             "id": "hbo",
             "name": "Max",
-            "homePage": "https://play.max.com/",
-            "themeColorCode": "#002be7",
-            "imageSet": {
-              "lightThemeImage": "https://media.movieofthenight.com/services/hbo/logo-light-theme.svg",
-              "darkThemeImage": "https://media.movieofthenight.com/services/hbo/logo-dark-theme.svg",
-              "whiteImage": "https://media.movieofthenight.com/services/hbo/logo-white.svg"
-            }
+            "homePage": "https://play.max.com/"
           },
           "type": "subscription",
           "link": "https://play.max.com/movie/dfa50804-e6f6-4fa2-a732-693dbc50527b",
-          "videoLink": "https://play.max.com/video/watch/306aa55d-38c5-4614-b75e-ca7433887790/c463e2c8-e703-466a-bd3d-aa02668ff3cb",
-          "quality": "uhd",
-          "expiresSoon": false,
-          "expiresOn": 1744927140,
-          "availableSince": 1716592507
+          "videoLink": "https://play.max.com/video/watch/306aa55d-38c5-4614-b75e-ca7433887790/c463e2c8-e703-466a-bd3d-aa02668ff3cb"
         }
       ]
     }

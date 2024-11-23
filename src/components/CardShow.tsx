@@ -1,12 +1,13 @@
 import React from 'react'
 import siteContent from '../assets/data/siteContent.json'
+import { Link } from 'react-router-dom'
 
 interface CardShowProps {
   id: string
   title: string
   image: string
   genres: Genres[]
-  streamPlatforms: StreamPlatform[]
+  streamPlatforms?: StreamPlatform[]
 }
 
 interface Genres {
@@ -19,7 +20,7 @@ interface StreamPlatform {
     id: string
     name: 'Netflix' | 'Max' | 'Prime Video' | 'Disney+' | 'Apple TV'
   }
-  type: 'subscription' | 'buy'
+  type: 'subscription' | 'buy' | 'rent' | 'addon'
   link: string
   videoLink: string
 }
@@ -29,49 +30,49 @@ export const CardShow: React.FC<CardShowProps> = ({
   title,
   image,
   genres,
-  streamPlatforms,
+  streamPlatforms = [],
 }) => {
-  const subscriptionPlatforms = streamPlatforms.filter(
+  const subscriptionPlatforms = streamPlatforms?.filter(
     (platform) => platform.type === 'subscription',
   )
 
   return (
     <article
       key={id}
-      className='relative rounded-2xl shadow-[0_15px_35px_rgba(255,255,255,0.1)] overflow-hidden'
+      className='relative overflow-hidden rounded-2xl shadow-[0_15px_35px_rgba(255,255,255,0.1)]'
     >
-      <a href='/top' className='group relative overflow-hidden'>
+      <div className='group relative overflow-hidden'>
         <img
           src={image}
           alt={`${title} Poster`}
-          className='w-full h-full transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur'
+          className='h-full w-full transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur'
         />
-        <div className='absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent translate-y-full transition-transform duration-500 ease-in-out group-hover:translate-y-0'></div>
+        <div className='absolute bottom-0 left-0 h-full w-full translate-y-full bg-gradient-to-t from-black to-transparent transition-transform duration-500 ease-in-out group-hover:translate-y-0'></div>
 
-        <div className='absolute w-full bottom-0 left-0 z-10 p-6 text-white transition-opacity duration-500 ease-in-out opacity-0 group-hover:opacity-100'>
-          <h1 className='text-2xl font-bold mb-2'>{title}</h1>
+        <div className='absolute bottom-0 left-0 z-10 w-full p-6 text-white opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100'>
+          <h1 className='mb-2 text-2xl font-bold'>{title}</h1>
           <div className='flex flex-wrap gap-1'>
             {genres.map((genre) => (
               <span
                 key={genre.id}
-                className='px-2 py-1 bg-gray-700 rounded-md text-sm'
+                className='rounded-md bg-gray-700 px-2 py-1 text-sm'
               >
                 {genre.name}
               </span>
             ))}
           </div>
           <h2>Disponible en: </h2>
-          <div className='flex gap-2 mt-2'>
+          <div className='mt-2 flex gap-2'>
             {(() => {
               const renderedIds = new Set<string>() // Para almacenar los IDs renderizados
 
               return subscriptionPlatforms
                 .filter((platform) => {
                   // Filtrar duplicados basado en `service.id`
-                  if (renderedIds.has(platform.service.id)) {
+                  if (renderedIds.has(platform?.service.id)) {
                     return false
                   }
-                  renderedIds.add(platform.service.id)
+                  renderedIds.add(platform?.service.id)
                   return true
                 })
                 .map((platform) => {
@@ -91,7 +92,7 @@ export const CardShow: React.FC<CardShowProps> = ({
                         <img
                           src={matchingIcon.image}
                           alt={matchingIcon.alt}
-                          className='w-12 h-12 md:w-12 md:h-12 p-1 rounded relative bg-white/20 backdrop-blur-sm border-white/20 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] cursor-pointer'
+                          className='relative h-12 w-12 cursor-pointer rounded border-white/20 bg-white/20 p-1 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] backdrop-blur-sm md:h-12 md:w-12'
                         />
                       ) : (
                         <span className='text-sm'>{platform.service.name}</span>
@@ -102,7 +103,7 @@ export const CardShow: React.FC<CardShowProps> = ({
             })()}
           </div>
         </div>
-      </a>
+      </div>
     </article>
   )
 }

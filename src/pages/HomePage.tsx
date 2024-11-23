@@ -2,7 +2,6 @@ import React from 'react'
 import {
   AnimatedBackground,
   Header,
-  Indicators,
   SearchInput,
   StreamingIcons,
 } from '../components'
@@ -31,8 +30,6 @@ export const HomePage: React.FC = () => {
         </p>
 
         <SearchInput />
-
-        {/* <Indicators images={backgroundImages} currentIndex={0} /> */}
 
         <StreamingIcons icons={streamingIcons} onClick={handleIconClick} />
       </div>
