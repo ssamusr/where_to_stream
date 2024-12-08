@@ -1,28 +1,14 @@
 import React from 'react'
 import siteContent from '../assets/data/siteContent.json'
 import { Link } from 'react-router-dom'
+import { Genre, StreamPlatform } from '../types/api/search'
 
 interface CardShowProps {
   id: string
   title: string
   image: string
-  genres: Genres[]
+  genres: Genre[]
   streamPlatforms?: StreamPlatform[]
-}
-
-interface Genres {
-  id: string
-  name: string
-}
-
-interface StreamPlatform {
-  service: {
-    id: string
-    name: 'Netflix' | 'Max' | 'Prime Video' | 'Disney+' | 'Apple TV'
-  }
-  type: 'subscription' | 'buy' | 'rent' | 'addon'
-  link: string
-  videoLink: string
 }
 
 export const CardShow: React.FC<CardShowProps> = ({
@@ -41,11 +27,11 @@ export const CardShow: React.FC<CardShowProps> = ({
       key={id}
       className='relative overflow-hidden rounded-2xl shadow-[0_15px_35px_rgba(255,255,255,0.1)]'
     >
-      <div className='group relative overflow-hidden'>
+      <div className='group relative h-full w-full overflow-hidden'>
         <img
           src={image}
           alt={`${title} Poster`}
-          className='h-full w-full transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur'
+          className='h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:-translate-y-12 group-hover:blur'
         />
         <div className='absolute bottom-0 left-0 h-full w-full translate-y-full bg-gradient-to-t from-black to-transparent transition-transform duration-500 ease-in-out group-hover:translate-y-0'></div>
 
