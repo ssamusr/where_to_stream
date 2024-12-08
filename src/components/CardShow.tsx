@@ -2,6 +2,10 @@ import React from 'react'
 import siteContent from '../assets/data/siteContent.json'
 import { Link } from 'react-router-dom'
 import { Genre, StreamPlatform } from '../types/api/search'
+import {
+  getSubscriptionPlatform,
+  getPlatformIcon,
+} from '../utils/cardShowHelpers'
 
 interface CardShowProps {
   id: string
@@ -18,9 +22,7 @@ export const CardShow: React.FC<CardShowProps> = ({
   genres,
   streamPlatforms = [],
 }) => {
-  const subscriptionPlatforms = streamPlatforms?.filter(
-    (platform) => platform.type === 'subscription',
-  )
+  const subscriptionPlatforms = getSubscriptionPlatform(streamPlatforms)
 
   return (
     <article
@@ -49,44 +51,29 @@ export const CardShow: React.FC<CardShowProps> = ({
           </div>
           <h2>Disponible en: </h2>
           <div className='mt-2 flex gap-2'>
-            {(() => {
-              const renderedIds = new Set<string>() // Para almacenar los IDs renderizados
+            {subscriptionPlatforms.map((platform) => {
+              const matchingIcon = getPlatformIcon(platform.service.name)
 
-              return subscriptionPlatforms
-                .filter((platform) => {
-                  // Filtrar duplicados basado en `service.id`
-                  if (renderedIds.has(platform?.service.id)) {
-                    return false
-                  }
-                  renderedIds.add(platform?.service.id)
-                  return true
-                })
-                .map((platform) => {
-                  const matchingIcon = siteContent.streamingIcons.find(
-                    (icon) => icon.name === platform.service.name,
-                  )
-
-                  return (
-                    <a
-                      key={platform.service.id}
-                      href={platform.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='block'
-                    >
-                      {matchingIcon ? (
-                        <img
-                          src={matchingIcon.image}
-                          alt={matchingIcon.alt}
-                          className='relative h-12 w-12 cursor-pointer rounded border-white/20 bg-white/20 p-1 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] backdrop-blur-sm md:h-12 md:w-12'
-                        />
-                      ) : (
-                        <span className='text-sm'>{platform.service.name}</span>
-                      )}
-                    </a>
-                  )
-                })
-            })()}
+              return (
+                <a
+                  key={platform.service.id}
+                  href={platform.link}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='block'
+                >
+                  {matchingIcon ? (
+                    <img
+                      src={matchingIcon.image}
+                      alt={matchingIcon.alt}
+                      className='relative h-12 w-12 cursor-pointer rounded border-white/20 bg-white/20 p-1 shadow-[0_0_60px_-10px_rgba(255,255,255,0.2)] backdrop-blur-sm md:h-12 md:w-12'
+                    />
+                  ) : (
+                    <span className='text-sm'>{platform.service.name}</span>
+                  )}
+                </a>
+              )
+            })}
           </div>
         </div>
       </div>
