@@ -18,7 +18,7 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className='relative h-screen w-screen overflow-hidden'>
-      <AnimatedBackground images={backgroundImages} />
+      <AnimatedBackground backgroundImages={backgroundImages} />
 
       <Header />
       <div className='relative z-10 flex h-full flex-col items-center justify-center text-center text-white'>

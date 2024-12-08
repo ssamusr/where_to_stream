@@ -42,8 +42,20 @@ export const siteContent = {
     { id: 3, text: 'Acerca de', url: '/about' },
   ],
   backgroundImages: [
-    '/src/assets/images/breaking-bad.webp',
-    '/src/assets/images/peaky-blinders.webp',
-    '/src/assets/images/game-of-thrones.webp',
+    {
+      id: 1,
+      image: '/src/assets/images/breaking-bad.webp',
+      logo: '/src/assets/images/breaking-bad-logo.webp',
+    },
+    {
+      id: 2,
+      image: '/src/assets/images/peaky-blinders.webp',
+      logo: '/src/assets/images/peaky-blinders-logo.webp',
+    },
+    {
+      id: 3,
+      image: '/src/assets/images/game-of-thrones.webp',
+      logo: 'src/assets/images/game-of-thrones-logo.webp',
+    },
   ],
 }
