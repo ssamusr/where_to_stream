@@ -47,15 +47,12 @@ pnpm run dev
 
 # Capturas de pantalla
 
-<!-- ### [Página de Inicio:](https://disney-plus-copycat.vercel.app/)
-![image](https://user-images.githubusercontent.com/34134103/171476129-56618e2d-4131-4a1d-9253-97a41a77d328.png)
+ ### [Página de Inicio:]([https://disney-plus-copycat.vercel.app/](https://vercel.com/ssamusrs-projects))
+![Home Page](https://github.com/user-attachments/assets/b87201ea-2d05-4499-80d3-f3ceda02c8f3)
 
-### [Popular:](https://disney-plus-copycat.vercel.app/search)
-![The Search Page](https://user-images.githubusercontent.com/34134103/171475429-cd9c92ce-ef60-4927-8e81-97e7e4675bb4.png)
+### [Popular:](https://vercel.com/ssamusrs-projects)
+![Top Shows Page](https://github.com/user-attachments/assets/260365f9-2790-4a99-9381-d18575a9a88b)
 
-### [Página de búsqueda:](https://disney-plus-copycat.vercel.app/movies)
-![image](https://user-images.githubusercontent.com/34134103/171476206-df71e501-0804-4b5c-9cde-e794405f7a97.png)
- -->
 <p>&nbsp;</p>
 
 # Aprendizaje
