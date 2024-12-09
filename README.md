@@ -53,7 +53,9 @@ pnpm run dev
 ### [Popular:](https://vercel.com/ssamusrs-projects)
 ![Top Shows Page](https://github.com/user-attachments/assets/1d01cef8-a88a-4861-8e84-302ba2e30580)
 
-<p>&nbsp;</p>
+### [Página del Show:](https://vercel.com/ssamusrs-projects)
+![Show Page](https://github.com/user-attachments/assets/6e7cda3e-d6da-4bf3-a297-02a4230893b5)
+
 
 # Aprendizaje
 
