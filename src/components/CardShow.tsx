@@ -1,11 +1,10 @@
 import React from 'react'
-import siteContent from '../assets/data/siteContent.json'
-import { Link } from 'react-router-dom'
 import { Genre, StreamPlatform } from '../types/api/search'
 import {
   getSubscriptionPlatform,
   getPlatformIcon,
 } from '../utils/cardShowHelpers'
+import { Link } from 'react-router-dom'
 
 interface CardShowProps {
   id: string
@@ -76,6 +75,10 @@ export const CardShow: React.FC<CardShowProps> = ({
             })}
           </div>
         </div>
+        <Link
+          to={`/show/${id}`}
+          className='absolute inset-0 z-10 cursor-pointer'
+        ></Link>
       </div>
     </article>
   )

@@ -56,8 +56,8 @@ export const TopShowsPage: React.FC = () => {
   return (
     <>
       <Header />
-      <div className='sm:px-6 lg:px-8 xl:px-12 px-4 max-w-[1600px] mx-auto'>
-        <h1 className='text-4xl md:text-6xl font-bold mb-2 text-center'>
+      <div className='mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12'>
+        <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
           Lo más visto en:
         </h1>
 
@@ -66,11 +66,7 @@ export const TopShowsPage: React.FC = () => {
           onQueryChange={handleQueryChange}
         />
 
-        <div
-          className='grid gap-2 grid-cols-1 
-          sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 
-          mx-auto max-w-full'
-        >
+        <div className='mx-auto grid max-w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
           {topShowsData?.map((show) => (
             <CardShow
               key={show.id}
