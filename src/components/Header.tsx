@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className='relative bg-transparent text-white'>
-      <div className='mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-10'>
+      <div className='mx-auto flex h-16 max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-12'>
         <div>
           <Link to='/' aria-label='Inicio'>
             <h1 className='relative z-30 text-lg md:text-xl lg:text-2xl'>

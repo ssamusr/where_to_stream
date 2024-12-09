@@ -61,4 +61,8 @@ export const AnimatedBackground: React.FC<Props> = ({
   )
 }
 
-/* TODO: Implementar onClick del botón */
+/* 
+TODO: Implementar onClick del botón 
+TODO2: Ajustar la position del botón para que quede a la misma distancia que el header
+
+*/
