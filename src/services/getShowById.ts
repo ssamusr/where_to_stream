@@ -1,6 +1,6 @@
 import { api } from './config'
 
-export const searchShowByTitle = async (id: string) => {
+export const getShowById = async (id: string) => {
   const { data } = await api.get(`shows/${id}`, {
     params: {
       country: 'es',

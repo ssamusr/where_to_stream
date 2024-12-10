@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
-interface UseFetchProps {
-  fetchFunction: (params?: string) => Promise<T>
+interface UseFetchProps<T> {
+  fetchFunction: (params: string) => Promise<T>
   params?: string
 }
 
-export const useFetch = <T>({ fetchFunction, params }: UseFetchProps) => {
+export const useFetch = <T>({ fetchFunction, params }: UseFetchProps<T>) => {
   const [data, setData] = useState<T | null>(null)
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
@@ -15,8 +15,7 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps) => {
       setLoading(true)
 
       try {
-        const result = await fetchFunction(params)
-        console.log(params)
+        const result = await fetchFunction(params || '')
         setData(result)
         setError(null)
       } catch (error) {
@@ -26,7 +25,7 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps) => {
       }
     }
 
-    fetchData()
+    if (params) fetchData()
   }, [fetchFunction, params])
 
   return {
