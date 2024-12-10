@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
           aria-expanded={menuOpen}
           aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
         >
-          <span className='sr-only'>Abrir menú</span>
+          <span className='sr-only'>Open menu</span>
           <svg
             className='h-6 w-6'
             xmlns='http://www.w3.org/2000/svg'

@@ -48,7 +48,7 @@ export const CardShow: React.FC<CardShowProps> = ({
               </span>
             ))}
           </div>
-          <h2>Disponible en: </h2>
+          <h2>You can watch on:</h2>
           <div className='mt-2 flex gap-2'>
             {subscriptionPlatforms.map((platform) => {
               const matchingIcon = getPlatformIcon(platform.service.name)

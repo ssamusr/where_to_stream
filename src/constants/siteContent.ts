@@ -37,9 +37,9 @@ export const siteContent = {
     },
   ],
   navbarLinks: [
-    { id: 1, text: 'Inicio', url: '/' },
-    { id: 2, text: 'Popular', url: '/top' },
-    { id: 3, text: 'Acerca de', url: '/about' },
+    { id: 1, text: 'Home', url: '/' },
+    { id: 2, text: 'Top Shows', url: '/top' },
+    { id: 3, text: 'About', url: '/about' },
   ],
   backgroundImages: [
     {
