@@ -36,7 +36,7 @@ export const ShowPage: React.FC = () => {
         className='absolute inset-0 h-full w-full bg-cover bg-center'
         style={{
           backgroundImage: `url(${backgroundUrl})`,
-          backgroundSize: 'contain',
+          backgroundSize: 'cover',
         }}
       >
         <div className='absolute inset-0 bg-black bg-opacity-70'></div>
