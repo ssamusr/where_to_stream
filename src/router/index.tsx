@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
 import {
-  AboutPage,
   HomePage,
   NotFoundPage,
   SearchResultsPage,
@@ -22,8 +21,8 @@ export const router = createBrowserRouter([
         element: <TopShowsPage />,
       },
       {
-        path: '/about',
-        element: <AboutPage />,
+        path: '/search',
+        element: <SearchResultsPage />,
       },
       {
         path: '/search/:query',

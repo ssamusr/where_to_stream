@@ -11,7 +11,7 @@ export const TopShowsPage: React.FC = () => {
   const location = useLocation()
 
   const [selectedStreamingService, setSelectedStreamingService] = useState(
-    location.state?.selectedStreaming,
+    location.state?.selectedStreaming || 'netflix',
   )
 
   const { data: topShowsData } = useFetch<ShowItem[]>({
@@ -26,7 +26,7 @@ export const TopShowsPage: React.FC = () => {
   return (
     <>
       <Header />
-      <div className='mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12'>
+      <div className='mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 xl:px-12'>
         <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
           Lo más visto en:
         </h1>

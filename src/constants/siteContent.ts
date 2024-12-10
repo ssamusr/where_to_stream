@@ -39,7 +39,7 @@ export const siteContent = {
   navbarLinks: [
     { id: 1, text: 'Home', url: '/' },
     { id: 2, text: 'Top Shows', url: '/top' },
-    { id: 3, text: 'About', url: '/about' },
+    { id: 3, text: 'Search', url: '/search' },
   ],
   backgroundImages: [
     {

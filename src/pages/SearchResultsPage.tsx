@@ -33,10 +33,10 @@ export const SearchResultsPage = () => {
   return (
     <>
       <Header />
-      <div className='mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12'>
+      <div className='mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 xl:px-12'>
         <div className='flex flex-col items-center gap-4'>
           <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
-            Result of: {query}
+            Result of: <span className='capitalize'>{query}</span>
           </h1>
 
           <SearchInput />
