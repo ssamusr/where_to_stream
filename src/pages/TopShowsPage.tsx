@@ -5,37 +5,7 @@ import { CardShow, Header, SelectStreaming } from '../components'
 import { useFetch } from '../hooks/useFetch'
 import { getTopShows } from '../services/topShows'
 
-interface Show {
-  id: string
-  originalTitle: string
-  imageSet: {
-    verticalPoster: {
-      w720: string
-    }
-    verticalBackdrop: {
-      w720: string
-    }
-  }
-  genres: Genres[]
-  streamingOptions: {
-    es: StreamPlatform[]
-  }
-}
-
-interface Genres {
-  id: string
-  name: string
-}
-
-interface StreamPlatform {
-  service: {
-    id: string
-    name: 'Netflix' | 'Max' | 'Prime Video' | 'Disney+' | 'Apple TV'
-  }
-  type: 'subscription' | 'buy'
-  link: string
-  videoLink: string
-}
+import { ShowItem } from '../types/api/search'
 
 export const TopShowsPage: React.FC = () => {
   const location = useLocation()
@@ -44,7 +14,7 @@ export const TopShowsPage: React.FC = () => {
     location.state?.selectedStreaming,
   )
 
-  const { data: topShowsData } = useFetch<Show[]>({
+  const { data: topShowsData } = useFetch<ShowItem[]>({
     fetchFunction: getTopShows,
     params: selectedStreamingService,
   })

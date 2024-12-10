@@ -65,7 +65,7 @@ export interface HorizontalBackdrop {
 }
 
 export interface StreamingOptions {
-  es?: StreamPlatform[]
+  es: StreamPlatform[]
 }
 
 export interface StreamPlatform {
