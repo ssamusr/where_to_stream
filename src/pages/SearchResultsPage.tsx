@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { searchShowByTitle } from '../services/searchShowByTitle'
 import { CardShow, Header } from '../components'
 import { ShowItem } from '../types/api/search'
@@ -7,7 +7,7 @@ import { ShowItem } from '../types/api/search'
 export const SearchResultsPage = () => {
   let { query } = useParams<{ query: string }>()
   const [results, setResults] = useState<ShowItem[] | null>(null)
-  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [isoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export const SearchResultsPage = () => {
       <Header />
       <div className='mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12'>
         <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
-          Resultado de: {query}
+          Result of: {query}
         </h1>
 
         <div className='mx-auto grid max-w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
