@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { searchShowByTitle } from '../services/searchShowByTitle'
-import { CardShow, Header } from '../components'
+import { CardShow, Header, SearchInput } from '../components'
 import { ShowItem } from '../types/api/search'
 
 export const SearchResultsPage = () => {
@@ -34,9 +34,13 @@ export const SearchResultsPage = () => {
     <>
       <Header />
       <div className='mx-auto max-w-[1600px] px-4 sm:px-6 lg:px-8 xl:px-12'>
-        <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
-          Result of: {query}
-        </h1>
+        <div className='flex flex-col items-center gap-4'>
+          <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
+            Result of: {query}
+          </h1>
+
+          <SearchInput />
+        </div>
 
         <div className='mx-auto grid max-w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
           {results?.map((show) => (
