@@ -4,7 +4,7 @@
 &nbsp;[![TypeScript](https://img.shields.io/static/v1?label=&message=TypeScript&color=3178C6&logo=typescript&logoColor=white&style=for-the-badge)](https://www.typescriptlang.org/)
 &nbsp;![Tailwind](https://img.shields.io/badge/tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-Where to Stream está hecho con ReactJS y TypeScript y Tailwind. Puede ver la API que se ha utilizado en este proyecto [¡AQUI!](https://docs.movieofthenight.com/)
+Where to Stream está hecho con ReactJS y TypeScript y Tailwind. Este proyecto utiliza la API **The Movie Database API**. _Dicha API está limitada a 1000 request._ Puede ver la documentación de la API [¡AQUI!](https://docs.movieofthenight.com/)
 
 [![Live Site](https://img.shields.io/static/v1?label=&message=Live%20Site&color=0ABF53&style=for-the-badge)](https://vercel.com/ssamusrs-projects)
 
@@ -15,8 +15,6 @@ Where to Stream está hecho con ReactJS y TypeScript y Tailwind. Puede ver la AP
 - [Aprendizaje](#aprendizaje)
 - [Futuras mejoras](#futuras-mejoras)
 - [Autor](#autor)
-
-<p>&nbsp;</p>
 
 # Instalación
 
@@ -68,12 +66,13 @@ Otro aspecto clave en mi aprendizaje ha sido la **interacción con APIs**, espec
 
 Por último, este proyecto me ha permitido reforzar mis conocimientos en **Tailwind CSS**, utilizando sus herramientas para mejorar el diseño y la experiencia visual de la web, logrando un aspecto moderno y funcional.
 
-<p>&nbsp;</p>
-
 # Futuras mejoras
 
-1. Optimización del SEO
-2. Implementación de Lazy Loading para componentes e imágenes
+1. Crear el componente SectionContainer.tsx, Button.tsx y crear variables de estilos en Tailwind.
+2. Optimizar la accesibilidad.
+3. Optimización del SEO.
+4. Estudiar la optimización de búsquedas repetidas (useMemo, localStorage, sistema de caché...).
+5. Implementación de Lazy Loading para componentes e imágenes.
 
 # Autor
 
