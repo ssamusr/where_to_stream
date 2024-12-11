@@ -17,7 +17,15 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: '/*',
+        element: <HomePage />,
+      },
+      {
         path: '/top',
+        element: <TopShowsPage />,
+      },
+      {
+        path: '/top/*',
         element: <TopShowsPage />,
       },
       {
