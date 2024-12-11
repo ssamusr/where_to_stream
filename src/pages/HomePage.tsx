@@ -1,11 +1,11 @@
 import React from 'react'
-import {
-  AnimatedBackground,
-  Header,
-  SearchInput,
-  StreamingIcons,
-} from '../components'
 import { useNavigate } from 'react-router-dom'
+
+import { AnimatedBackground } from '../components/AnimatedBackground'
+import { Header } from '../components/Header'
+import { SearchInput } from '../components/SearchInput'
+import { StreamingIcons } from '../components/StreamingIcons'
+
 import { siteContent } from '../constants/siteContent'
 
 export const HomePage: React.FC = () => {

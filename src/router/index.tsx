@@ -1,11 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom'
-import {
-  HomePage,
-  NotFoundPage,
-  SearchResultsPage,
-  ShowPage,
-  TopShowsPage,
-} from '../pages'
+import { NotFoundPage } from '../pages/NotFoundPage'
+import { HomePage } from '../pages/HomePage'
+import { TopShowsPage } from '../pages/TopShowsPage'
+import { SearchResultsPage } from '../pages/SearchResultsPage'
+import { ShowPage } from '../pages/ShowPage'
 
 export const router = createBrowserRouter([
   {

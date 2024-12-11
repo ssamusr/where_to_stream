@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
-import { CardShow, Header, SelectStreaming } from '../components'
+import { CardShow } from '../components/CardShow'
+import { Header } from '../components/Header'
+import { SelectStreaming } from '../components/SelectStreaming'
 import { useFetch } from '../hooks/useFetch'
-import { getTopShows } from '../services/topShows'
 
+import { getTopShows } from '../services/topShows'
 import { ShowItem } from '../types/api/search'
 
 export const TopShowsPage: React.FC = () => {

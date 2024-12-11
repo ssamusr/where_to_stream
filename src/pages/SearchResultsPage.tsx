@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { searchShowByTitle } from '../services/searchShowByTitle'
-import { CardShow, Header, SearchInput } from '../components'
-import { Loader } from '../components/Loader/Loader'
-import { ShowItem } from '../types/api/search'
+
+import { CardShow } from '../components/CardShow'
 import { ErrorMessage } from '../components/ErrorMessage'
+import { Header } from '../components/Header'
+import { Loader } from '../components/Loader/Loader'
+import { SearchInput } from '../components/SearchInput'
+
+import { searchShowByTitle } from '../services/searchShowByTitle'
+
+import { ShowItem } from '../types/api/search'
 
 export const SearchResultsPage = () => {
   let { query } = useParams<{ query: string }>()

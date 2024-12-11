@@ -1,15 +1,17 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { Header } from '../components'
+
+import { ErrorMessage } from '../components/ErrorMessage'
+import { Header } from '../components/Header'
+import { Loader } from '../components/Loader/Loader'
 import { useFetch } from '../hooks/useFetch'
-import { getShowById } from '../services/getShowById'
 import {
   getPlatformIcon,
   getSubscriptionPlatform,
 } from '../utils/cardShowHelpers'
+
+import { getShowById } from '../services/getShowById'
 import { ShowItem } from '../types/api/search'
-import { Loader } from '../components/Loader/Loader'
-import { ErrorMessage } from '../components/ErrorMessage'
 
 export const ShowPage: React.FC = () => {
   const navigate = useNavigate()

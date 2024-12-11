@@ -28,7 +28,7 @@ export const SearchInput: React.FC = () => {
       </label>
       <div className='relative flex items-center'>
         <img
-          src='/src/assets/images/icons/search.png'
+          src='./assets/icons/search.png'
           alt='Buscar'
           className='absolute left-3 h-5 w-5'
         />

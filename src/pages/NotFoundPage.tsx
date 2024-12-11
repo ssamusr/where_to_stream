@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Header } from '../components'
+
+import { Header } from '../components/Header'
 
 export const NotFoundPage: React.FC = () => {
   const navigate = useNavigate()
