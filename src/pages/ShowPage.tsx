@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Header } from '../components'
 import { useFetch } from '../hooks/useFetch'
 import { getShowById } from '../services/getShowById'
@@ -8,17 +8,45 @@ import {
   getSubscriptionPlatform,
 } from '../utils/cardShowHelpers'
 import { ShowItem } from '../types/api/search'
+import { Loader } from '../components/Loader/Loader'
+import { ErrorMessage } from '../components/ErrorMessage'
 
 export const ShowPage: React.FC = () => {
+  const navigate = useNavigate()
   const { id } = useParams<{ id: string }>()
 
-  const { data: show } = useFetch<ShowItem>({
+  const {
+    data: show,
+    isLoading,
+    error,
+  } = useFetch<ShowItem>({
     fetchFunction: getShowById,
     params: id || '',
   })
 
-  if (!show || !show.streamingOptions?.es) {
-    return <div>Cargando...</div>
+  if (isLoading) {
+    return (
+      <div className='flex h-screen items-center justify-center'>
+        <Loader />
+      </div>
+    )
+  }
+
+  if (error || !show) {
+    const errorMessage =
+      'The requested show was not found. Please perform another search'
+
+    return (
+      <div className='flex h-screen flex-col items-center justify-center'>
+        <ErrorMessage message={errorMessage} />
+        <button
+          className='rounded bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700'
+          onClick={() => navigate(-1)}
+        >
+          Back to previous page
+        </button>
+      </div>
+    )
   }
 
   const subscriptionPlatforms = getSubscriptionPlatform(
@@ -95,5 +123,3 @@ export const ShowPage: React.FC = () => {
     </div>
   )
 }
-
-//TODO: Añadir loading o fallback

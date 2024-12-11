@@ -7,12 +7,12 @@ interface UseFetchProps<T> {
 
 export const useFetch = <T>({ fetchFunction, params }: UseFetchProps<T>) => {
   const [data, setData] = useState<T | null>(null)
-  const [loading, setLoading] = useState<boolean>(true)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true)
+      setIsLoading(true)
 
       try {
         const result = await fetchFunction(params || '')
@@ -21,7 +21,7 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps<T>) => {
       } catch (error) {
         setError(error instanceof Error ? error.message : 'Error desconocido')
       } finally {
-        setLoading(false)
+        setIsLoading(false)
       }
     }
 
@@ -30,7 +30,7 @@ export const useFetch = <T>({ fetchFunction, params }: UseFetchProps<T>) => {
 
   return {
     data,
-    loading,
+    isLoading,
     error,
     fetchFunction,
   }

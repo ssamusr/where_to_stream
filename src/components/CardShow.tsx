@@ -83,7 +83,3 @@ export const CardShow: React.FC<CardShowProps> = ({
     </article>
   )
 }
-
-//TODO: refactorizar toda la lógica del renderizado
-//TODO2: refactorizar todo el tipado de la API
-//TODO3: Arreglar las cards. Hay que quitar el <a> de toda la card

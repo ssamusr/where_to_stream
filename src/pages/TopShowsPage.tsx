@@ -28,7 +28,7 @@ export const TopShowsPage: React.FC = () => {
       <Header />
       <div className='mx-auto max-w-[1600px] px-4 pb-20 sm:px-6 lg:px-8 xl:px-12'>
         <h1 className='mb-2 text-center text-4xl font-bold md:text-6xl'>
-          Lo más visto en:
+          Most viewed shows on:
         </h1>
 
         <SelectStreaming
@@ -52,5 +52,3 @@ export const TopShowsPage: React.FC = () => {
     </>
   )
 }
-
-//TODO: refactorizar todo el tipado de la API

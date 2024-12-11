@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { searchShowByTitle } from '../services/searchShowByTitle'
 import { CardShow, Header, SearchInput } from '../components'
+import { Loader } from '../components/Loader/Loader'
 import { ShowItem } from '../types/api/search'
+import { ErrorMessage } from '../components/ErrorMessage'
 
 export const SearchResultsPage = () => {
   let { query } = useParams<{ query: string }>()
   const [results, setResults] = useState<ShowItem[] | null>(null)
-  const [isoading, setIsLoading] = useState<boolean>(false)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -19,7 +21,13 @@ export const SearchResultsPage = () => {
 
       try {
         const data = await searchShowByTitle(query)
-        setResults(data)
+
+        if (data.length === 0) {
+          setError(`Not found: ${query}. Please, perform a new search.`)
+          setResults([])
+        } else {
+          setResults(data)
+        }
       } catch (error) {
         setError(error instanceof Error ? error.message : 'Error desconocido')
       } finally {
@@ -42,6 +50,18 @@ export const SearchResultsPage = () => {
           <SearchInput />
         </div>
 
+        {isLoading && (
+          <div className='flex justify-center'>
+            <Loader />
+          </div>
+        )}
+
+        {error && (
+          <div className='flex justify-center py-10'>
+            <ErrorMessage message={error} />
+          </div>
+        )}
+
         <div className='mx-auto grid max-w-full grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
           {results?.map((show) => (
             <CardShow
@@ -58,5 +78,3 @@ export const SearchResultsPage = () => {
     </>
   )
 }
-
-//TODO: isLoading, error state
