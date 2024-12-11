@@ -13,6 +13,7 @@ Where to Stream está hecho con ReactJS y TypeScript y Tailwind. Puede ver la AP
 - [Instalación](#instalación)
 - [Capturas de pantalla](#capturas-de-pantalla)
 - [Aprendizaje](#aprendizaje)
+- [Futuras mejoras](#futuras-mejoras)
 - [Autor](#autor)
 
 <p>&nbsp;</p>
@@ -47,16 +48,16 @@ pnpm run dev
 
 # Capturas de pantalla
 
- ### [Página de Inicio:](https://vercel.com/ssamusrs-projects)
+ ### [Página de Inicio:](https://where-to-stream-pied.vercel.app/)
 ![Home Page](https://github.com/user-attachments/assets/1f25a6b0-c303-47bb-ae60-3077cef41ea6)
 
-### [Popular:](https://vercel.com/ssamusrs-projects)
+### [Popular:](https://where-to-stream-pied.vercel.app/top)
 ![Top Shows Page](https://github.com/user-attachments/assets/2d2ccd94-c9cd-4858-9948-3f3f4871f172)
 
-### [Página del buscador:](https://vercel.com/ssamusrs-projects)
+### [Página del buscador:](https://where-to-stream-pied.vercel.app/search/batman)
 ![Show Page](https://github.com/user-attachments/assets/f6605574-c1bb-49c2-9272-8ba68ea8a231)
 
-### [Página del Show:](https://vercel.com/ssamusrs-projects)
+### [Página del Show:](https://where-to-stream-pied.vercel.app/show/8865824)
 ![Show Page](https://github.com/user-attachments/assets/dca5d0ac-b61b-4c4b-a4b2-45d6e9b1be96)
 
 # Aprendizaje
@@ -68,6 +69,11 @@ Otro aspecto clave en mi aprendizaje ha sido la **interacción con APIs**, espec
 Por último, este proyecto me ha permitido reforzar mis conocimientos en **Tailwind CSS**, utilizando sus herramientas para mejorar el diseño y la experiencia visual de la web, logrando un aspecto moderno y funcional.
 
 <p>&nbsp;</p>
+
+# Futuras mejoras
+
+1. Optimización del SEO
+2. Implementación de Lazy Loading para componentes e imágenes
 
 # Autor
 
