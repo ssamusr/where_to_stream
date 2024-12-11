@@ -47,15 +47,17 @@ pnpm run dev
 
 # Capturas de pantalla
 
- ### [Página de Inicio:]([https://disney-plus-copycat.vercel.app/](https://vercel.com/ssamusrs-projects))
-![Home Page](https://github.com/user-attachments/assets/b87201ea-2d05-4499-80d3-f3ceda02c8f3)
+ ### [Página de Inicio:](https://vercel.com/ssamusrs-projects)
+![Home Page](https://github.com/user-attachments/assets/1f25a6b0-c303-47bb-ae60-3077cef41ea6)
 
 ### [Popular:](https://vercel.com/ssamusrs-projects)
-![Top Shows Page](https://github.com/user-attachments/assets/1d01cef8-a88a-4861-8e84-302ba2e30580)
+![Top Shows Page](https://github.com/user-attachments/assets/2d2ccd94-c9cd-4858-9948-3f3f4871f172)
+
+### [Página del buscador:](https://vercel.com/ssamusrs-projects)
+![Show Page](https://github.com/user-attachments/assets/f6605574-c1bb-49c2-9272-8ba68ea8a231)
 
 ### [Página del Show:](https://vercel.com/ssamusrs-projects)
-![Show Page](https://github.com/user-attachments/assets/6e7cda3e-d6da-4bf3-a297-02a4230893b5)
-
+![Show Page](https://github.com/user-attachments/assets/dca5d0ac-b61b-4c4b-a4b2-45d6e9b1be96)
 
 # Aprendizaje
 
